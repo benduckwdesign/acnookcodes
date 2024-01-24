@@ -606,7 +606,7 @@ func NewNookCoder(opts ...CoderOptFunc) *NookCoder {
 
 // This function will properly format the magazine name,
 // so you don't need to split and reverse it manually.
-func withMagazineName(name string) CoderOptFunc {
+func WithMagazineName(name string) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_Magazine
@@ -629,7 +629,7 @@ func withMagazineName(name string) CoderOptFunc {
 
 // This function will properly format the magazine name,
 // so you don't need to split and reverse it manually.
-func withMagazine(name ...int) CoderOptFunc {
+func WithMagazine(name ...int) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_Magazine
@@ -652,7 +652,7 @@ func withMagazine(name ...int) CoderOptFunc {
 
 // This function will properly format the minigame name,
 // so you don't need to split and reverse it manually.
-func withMinigameString(name string) CoderOptFunc {
+func WithMinigameString(name string) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_CardEMini
@@ -675,7 +675,7 @@ func withMinigameString(name string) CoderOptFunc {
 
 // This function will properly format the minigame name,
 // so you don't need to split and reverse it manually.
-func withMinigame(name ...int) CoderOptFunc {
+func WithMinigame(name ...int) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_CardEMini
@@ -696,7 +696,7 @@ func withMinigame(name ...int) CoderOptFunc {
 	}
 }
 
-func withPlayerString(name string) CoderOptFunc {
+func WithPlayerString(name string) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -712,7 +712,7 @@ func withPlayerString(name string) CoderOptFunc {
 	}
 }
 
-func withPlayer(name ...int) CoderOptFunc {
+func WithPlayer(name ...int) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -728,7 +728,7 @@ func withPlayer(name ...int) CoderOptFunc {
 	}
 }
 
-func withTown(name ...int) CoderOptFunc {
+func WithTown(name ...int) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -744,7 +744,7 @@ func withTown(name ...int) CoderOptFunc {
 	}
 }
 
-func withTownString(name string) CoderOptFunc {
+func WithTownString(name string) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -760,7 +760,7 @@ func withTownString(name string) CoderOptFunc {
 	}
 }
 
-func withSpecialVillager(villager SpecialVillagerId) CoderOptFunc {
+func WithSpecialVillager(villager SpecialVillagerId) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_Popular
@@ -772,7 +772,7 @@ func withSpecialVillager(villager SpecialVillagerId) CoderOptFunc {
 	}
 }
 
-func withVillager(villager VillagerId) CoderOptFunc {
+func WithVillager(villager VillagerId) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_Popular
@@ -784,7 +784,7 @@ func withVillager(villager VillagerId) CoderOptFunc {
 	}
 }
 
-func withOverrideVillager(value uint8) CoderOptFunc {
+func WithOverrideVillager(value uint8) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -803,7 +803,7 @@ func withOverrideVillager(value uint8) CoderOptFunc {
 	}
 }
 
-func withOverrideSpecialVillager(value uint8) CoderOptFunc {
+func WithOverrideSpecialVillager(value uint8) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -823,7 +823,7 @@ func withOverrideSpecialVillager(value uint8) CoderOptFunc {
 }
 
 // true = 1, false = 0
-func withOverrideNPCType(value bool) CoderOptFunc {
+func WithOverrideNPCType(value bool) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_User
@@ -837,13 +837,13 @@ func withOverrideNPCType(value bool) CoderOptFunc {
 	}
 }
 
-func withItemCode(item uint16) CoderOptFunc {
+func WithItemCode(item uint16) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		opts.itemId = &item
 	}
 }
 
-func withCodeType(codetype NookCodeType) CoderOptFunc {
+func WithCodeType(codetype NookCodeType) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		opts.nookCodeType = &codetype
 	}
@@ -854,7 +854,7 @@ func withCodeType(codetype NookCodeType) CoderOptFunc {
 // 2 - 30%
 // 1 - 60%
 // 0 - 80%
-func withHitRate(hitrate_level uint8) CoderOptFunc {
+func WithHitRate(hitrate_level uint8) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_Magazine
@@ -868,7 +868,7 @@ func withHitRate(hitrate_level uint8) CoderOptFunc {
 // 2 - 40%
 // 1 - 60%
 // 0 - 80%
-func withCardEHitRate(e_hitrate_level uint8) CoderOptFunc {
+func WithCardEHitRate(e_hitrate_level uint8) CoderOptFunc {
 	return func(opts *CoderOpts) {
 		if opts.nookCodeType == nil {
 			t := NookCodeType_CardE
